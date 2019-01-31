@@ -198,6 +198,7 @@ header {
 	background-size: cover;
 	z-index: 10;
 	overflow: hidden;
+	text-shadow: 0 0 5px #731492;
 }
 .header-banner{
 	position: absolute;
@@ -237,7 +238,8 @@ header #navigation-S {
 
 header #navigation-S ul {
 	padding-left: 0;
-	margin: .9em 0;
+	margin: 0;
+	
 }
 
 header #navigation-S ul li {
@@ -301,6 +303,7 @@ header .h-footer {
 header .h-footer ol,
 header .h-footer ul {
 	list-style: none;
+	padding-left: 0;
 }
 
 header .h-footer ul li {
@@ -649,6 +652,7 @@ footer>.copyright p {
 	background: white;
 	border-radius: 50%;
 	cursor: pointer;
+	box-shadow:0 0 5px #999;
 }
 
 #tobuttom {
@@ -709,11 +713,7 @@ main {
 	overflow: hidden;
 	background: #fff;
 	z-index: 2;
-}
-
-.layout-cart .post>a img {
-	width: 100%;
-	height: 100%;
+	object-fit: cover;
 }
 
 .layout-cart .post-text {
@@ -1032,5 +1032,21 @@ main {
 	}
 	40% {
 		box-shadow: 0 2.5em 0 0 #FFF;
+	}
+}
+
+.animate-up-down{
+	animation: upAndDown 2s ease-in-out infinite;
+	cursor: pointer;
+}
+@keyframes upAndDown {
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(1em);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }

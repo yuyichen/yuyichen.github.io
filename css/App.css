@@ -194,7 +194,7 @@
 		margin: 4em auto 3em;
 	}
 	header #logo-S {
-		margin: auto calc((100% - 4em)/2);
+		margin: auto calc((100% - 5em)/2);
 	}
 	header #navigation-S {
 		clear: both;
