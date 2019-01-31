@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      deno安装报错? | 羽衣尘的个人博客
+      前端踩坑记录 | 羽衣尘的个人博客
     
   </title>
   <meta name="author" content="Lili">
@@ -112,7 +112,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《deno安装报错?》
+						当前文章&nbsp;:&nbsp;《前端踩坑记录》
 					
 				</p>
 				<!-- Progress bar -->
@@ -230,8 +230,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		deno安装报错?
+	<a href="/2019/01/31/前端踩坑记录/" itemprop="url">
+		前端踩坑记录
 	</a>
 
 	</div>
@@ -240,16 +240,16 @@
 		<span>
 			
 	发布于
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		<time datetime="2019-01-30T07:52:27.000Z" itemprop="datePublished">
-	  		2019-01-30
+	<a href="/2019/01/31/前端踩坑记录/" itemprop="url">
+		<time datetime="2019-01-31T07:05:02.000Z" itemprop="datePublished">
+	  		2019-01-31
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		<time datetime="2019-01-30T07:52:27.000Z" itemprop="dateUpdated">
+	<a href="/2019/01/31/前端踩坑记录/" itemprop="url">
+		<time datetime="2019-01-31T07:05:02.000Z" itemprop="dateUpdated">
 	  		2019-01-31
 	  </time>
 	</a> 	
@@ -260,8 +260,12 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/deno/" class=" ">
-			deno
+		<a href="/tags/ios/" class=" ">
+			ios
+		</a>
+	
+		<a href="/tags/安卓/" class=" ">
+			安卓
 		</a>
 	
 		
@@ -274,21 +278,41 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p><a href="https://deno.land/" target="_blank" rel="noopener">deno</a> 是新出的框架,本来想安装学习一下的,但是发现按照官方文档上的安装方法根本安装不了,应该是地址被墙了,折腾各种工具也没安装成功</p>
-<p>官方的shell安装命令</p>
-<pre class="line-numbers language-bash"><code class="language-bash">curl -L https://deno.land/x/install/install.sh <span class="token operator">|</span> sh
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HOME</span>/.deno/bin:<span class="token variable">$PATH</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>后来发现其实这个地址会跳转到github上的地址,所以完全可以用github上的地址替换原来的地址,命令如下</p>
-<pre class="line-numbers language-bash"><code class="language-bash">curl -L https://raw.githubusercontent.com/denoland/deno_install/master/install.sh <span class="token operator">|</span> sh
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HOME</span>/.deno/bin:<span class="token variable">$PATH</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>速度有点慢,下载了十多分钟,总算是安装成功了,看截图</p>
-<p><img src="https://s2.ax1x.com/2019/01/30/klRaXF.png" width="600" align="center"></p>
+		<h2 id="ios-label包裹的input不能触发事件"><a href="#ios-label包裹的input不能触发事件" class="headerlink" title="ios label包裹的input不能触发事件"></a>ios label包裹的input不能触发事件</h2><p><a href="https://segmentfault.com/q/1010000005606353/a-1020000005611731" target="_blank" rel="noopener">参考文章</a><br>解决办法</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">label > * </span><span class="token punctuation">{</span> <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>注意label子元素如果有多个,可能也不能触发事件</p>
+</blockquote>
+<h2 id="IOS9-Promise的finally不兼容"><a href="#IOS9-Promise的finally不兼容" class="headerlink" title="IOS9 Promise的finally不兼容"></a>IOS9 Promise的finally不兼容</h2><p>建议then和catch配合使用</p>
+<h2 id="IOS-浏览器端overflow：scroll-overflow：auto元素无法滑动bug解决方法"><a href="#IOS-浏览器端overflow：scroll-overflow：auto元素无法滑动bug解决方法" class="headerlink" title="IOS 浏览器端overflow：scroll overflow：auto元素无法滑动bug解决方法"></a>IOS 浏览器端overflow：scroll overflow：auto元素无法滑动bug解决方法</h2><p><a href="https://blog.csdn.net/qq_30114149/article/details/80844346" target="_blank" rel="noopener">参考文章</a></p>
+<h2 id="vue-router-改变query参数页面不刷新"><a href="#vue-router-改变query参数页面不刷新" class="headerlink" title="vue-router 改变query参数页面不刷新"></a>vue-router 改变query参数页面不刷新</h2><p>解决方法,通过路由回调事件</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">beforeRouteUpdate</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//需要调用这个方法,才能保证路由trueData改变时能正确刷新页面</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>trueData <span class="token operator">=</span> to<span class="token punctuation">.</span>params<span class="token punctuation">.</span>trueData<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取新的query参数,这里的例子是trueData</span>
+    <span class="token comment" spellcheck="true">//...页面初始化</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//跳转</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="安卓版微信H5上上传图片-无拍照选项"><a href="#安卓版微信H5上上传图片-无拍照选项" class="headerlink" title="安卓版微信H5上上传图片,无拍照选项"></a>安卓版微信H5上上传图片,无拍照选项</h2><p>当你写<code>&lt;input type=&quot;file&quot;&gt;</code> 的时候在IOS上可以成功调起拍照和图库两块，在安卓手机上只能调取图库而没有拍照功能，解决办法：给input 加上accept属性</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/*<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>  //调用相机 ，图片或者相册 （两者都行）
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>加上了capture=camera”属性之后安卓手机就直接调用了相机，没有了图库的选项</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/*;capture<span class="token punctuation">=</span>camera<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> //直接调用相机
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video/*;capture<span class="token punctuation">=</span>camcorder<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> // 调取视频
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>audio/*;capture<span class="token punctuation">=</span>microphone<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> //调取音频
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意accept=”image/png,image/jpeg” 这样写可能也不行</p>
+</blockquote>
+<h2 id="vue-在使用v-html生成的内容-样式不生效"><a href="#vue-在使用v-html生成的内容-样式不生效" class="headerlink" title="vue 在使用v-html生成的内容,样式不生效"></a>vue 在使用v-html生成的内容,样式不生效</h2><p>解决方案：</p>
+<p>scoped属性导致css仅对当前组件生效（用css3的属性选择器+生成的随机属性实现的），而html绑定渲染出的内容可以理解为是子组件的内容，子组件不会被加上对应的属性，所以不会应用css.</p>
+<p>解决的话把scoped属性去掉就行了</p>
 	
 	</div>
 	
-	<div id="current-post-cover" data-scr="https://i0.hippopx.com/photos/871/443/724/stones-rocks-pebbles-tranquil-preview.jpg"></div>
+	<div id="current-post-cover" data-scr="https://i0.hippopx.com/photos/179/171/625/sparkler-holding-hands-firework-thumb.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -302,12 +326,12 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录" rel="prev">
+			<a href="/2019/01/31/rap的正确引入方式/" title="rap的正确引入方式" rel="prev">
 				&laquo;上一篇
 			</a>
 		
 		
-			<a href="/2019/01/30/hello-world/" title="Hello World" rel="next">
+			<a href="/2019/01/30/deno-install/" title="deno安装报错?" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -342,22 +366,18 @@
 		
 				<li>
 					<div>
-						<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录">
-							前端踩坑记录
+						<a href="/2019/01/30/deno-install/" title="deno安装报错?">
+							deno安装报错?
 						</a>
 						<p>
-							ios label包裹的input不能触发事件参考文章解决办法
-label > * { pointer-events: none; }
-
-
-注意label子元素如果有多个,可能也不能触发事件
-
-IOS9 Promise的finally...
+							deno 是新出的框架,本来想安装学习一下的,但是发现按照官方文档上的安装方法根本安装不了,应该是地址被墙了,折腾各种工具也没安装成功
+官方的shell安装命令
+curl -L https://deno.land/x/install/...
 						</p>
 					</div>
 
-					<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录">				
-						<img src="https://i0.hippopx.com/photos/179/171/625/sparkler-holding-hands-firework-thumb.jpg" class="relateImg" alt="前端踩坑记录">
+					<a href="/2019/01/30/deno-install/" title="deno安装报错?">				
+						<img src="https://i0.hippopx.com/photos/871/443/724/stones-rocks-pebbles-tranquil-preview.jpg" class="relateImg" alt="deno安装报错?">
 					</a>
 				</li>											
 		
@@ -578,6 +598,13 @@ IOS9 Promise的finally...
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	
 		</main>
 		

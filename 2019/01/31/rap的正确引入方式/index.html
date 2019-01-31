@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      deno安装报错? | 羽衣尘的个人博客
+      rap的正确引入方式 | 羽衣尘的个人博客
     
   </title>
   <meta name="author" content="Lili">
@@ -112,7 +112,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《deno安装报错?》
+						当前文章&nbsp;:&nbsp;《rap的正确引入方式》
 					
 				</p>
 				<!-- Progress bar -->
@@ -230,8 +230,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		deno安装报错?
+	<a href="/2019/01/31/rap的正确引入方式/" itemprop="url">
+		rap的正确引入方式
 	</a>
 
 	</div>
@@ -240,16 +240,16 @@
 		<span>
 			
 	发布于
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		<time datetime="2019-01-30T07:52:27.000Z" itemprop="datePublished">
-	  		2019-01-30
+	<a href="/2019/01/31/rap的正确引入方式/" itemprop="url">
+		<time datetime="2019-01-31T07:15:48.000Z" itemprop="datePublished">
+	  		2019-01-31
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/01/30/deno-install/" itemprop="url">
-		<time datetime="2019-01-30T07:52:27.000Z" itemprop="dateUpdated">
+	<a href="/2019/01/31/rap的正确引入方式/" itemprop="url">
+		<time datetime="2019-01-31T07:15:48.000Z" itemprop="dateUpdated">
 	  		2019-01-31
 	  </time>
 	</a> 	
@@ -260,8 +260,16 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/deno/" class=" ">
-			deno
+		<a href="/tags/rap/" class=" ">
+			rap
+		</a>
+	
+		<a href="/tags/mock/" class=" ">
+			mock
+		</a>
+	
+		<a href="/tags/webpack/" class=" ">
+			webpack
 		</a>
 	
 		
@@ -274,21 +282,49 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p><a href="https://deno.land/" target="_blank" rel="noopener">deno</a> 是新出的框架,本来想安装学习一下的,但是发现按照官方文档上的安装方法根本安装不了,应该是地址被墙了,折腾各种工具也没安装成功</p>
-<p>官方的shell安装命令</p>
-<pre class="line-numbers language-bash"><code class="language-bash">curl -L https://deno.land/x/install/install.sh <span class="token operator">|</span> sh
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HOME</span>/.deno/bin:<span class="token variable">$PATH</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>后来发现其实这个地址会跳转到github上的地址,所以完全可以用github上的地址替换原来的地址,命令如下</p>
-<pre class="line-numbers language-bash"><code class="language-bash">curl -L https://raw.githubusercontent.com/denoland/deno_install/master/install.sh <span class="token operator">|</span> sh
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HOME</span>/.deno/bin:<span class="token variable">$PATH</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>速度有点慢,下载了十多分钟,总算是安装成功了,看截图</p>
-<p><img src="https://s2.ax1x.com/2019/01/30/klRaXF.png" width="600" align="center"></p>
+		<p><a href="https://github.com/thx/rap2-delos" target="_blank" rel="noopener">rap</a>是阿里的开源项目,可以实现前后端分离开发,具体的使用方式可以去官网查看文档,这里主要是介绍在使用webpack本地开发阶段怎么正确的引入mock</p>
+<p>实际前端开发过程中,可能有部分接口已实现,一部分接口后端还未开发出来,前者只需要代理到测试环境即可,而后者我们可以代理到mock服务器上,实现前后端分离,以达到快速开发的目的.</p>
+<p>但是如果根据开发环境区分接口代理地址,一方面已实现的接口和未实现的接口不太好做区分;另外每次开关mock都需要重启本地服务,大大影响开发效率,其实有更好的方式来接入mock服务</p>
+<p>根据<a href="https://github.com/chimurai/http-proxy-middleware#http-proxy-middleware-options" target="_blank" rel="noopener">http-proxy-middleware</a>官方文档,代理的规则不仅可以通过正则的方式,也可以通过function自定义代理规则</p>
+<ol>
+<li>以数组方式配置proxy选项</li>
+<li>将代理匹配方式写在<code>context</code>属性中,下面的demo中是使用<code>mock</code>这个参数来区分mock环境</li>
+<li>接口地址追加入参<code>mock=1</code>,用于代理到mock服务,去掉则是代理到测试环境</li>
+</ol>
+<p>demo如下</p>
+<p>proxy配置示例</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">proxy<span class="token punctuation">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+            context<span class="token punctuation">:</span><span class="token punctuation">(</span>pathname<span class="token punctuation">,</span>req<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//mock环境</span>
+                <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token regex">/^\/hr\/.+\.json$/</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>pathname<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'mock=1'</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            target<span class="token punctuation">:</span> <span class="token string">'https://mock.api.jituancaiyun.com/app/mock/18'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//替换成自己的mock服务,或者直接使用官方的服务</span>
+            secure<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            changeOrigin<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            context<span class="token punctuation">:</span><span class="token punctuation">(</span>pathname<span class="token punctuation">,</span>req<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//测试环境</span>
+                <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token regex">/^\/hr\/.+\.json$/</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>pathname<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'mock=1'</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            target<span class="token punctuation">:</span> <span class="token string">'http://admin.jituancaiyun.net'</span><span class="token punctuation">,</span>
+            secure<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            changeOrigin<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接口配置示例</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+       companyInfo<span class="token punctuation">:</span><span class="token string">'/hr/hrorg/getOrgInfo.json?mock=1'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//企业信息</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>这个思路可以进行进一步的扩展,使用不同的参数结合pathRewrite,模拟比如接口出错的场景</strong></p>
+<blockquote>
+<p>有些脚手架对proxy配置进行了自己的封装导致不能使用数组方式,可以反馈给脚手架维护者</p>
+</blockquote>
 	
 	</div>
 	
-	<div id="current-post-cover" data-scr="https://i0.hippopx.com/photos/871/443/724/stones-rocks-pebbles-tranquil-preview.jpg"></div>
+	<div id="current-post-cover" data-scr="https://i0.hippopx.com/photos/965/714/472/tree-sunlight-background-relaxation-thumb.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -302,12 +338,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/01/30/hello-world/" title="Hello World" rel="next">
+			<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -322,23 +354,6 @@
 
 <div class="relate-post">
 	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/01/31/rap的正确引入方式/" title="rap的正确引入方式">
-							rap的正确引入方式
-						</a>
-						<p>
-							rap是阿里的开源项目,可以实现前后端分离开发,具体的使用方式可以去官网查看文档,这里主要是介绍在使用webpack本地开发阶段怎么正确的引入mock
-实际前端开发过程中,可能有部分接口已实现,一部分接口后端还未开发出来,前者只需要代...
-						</p>
-					</div>
-
-					<a href="/2019/01/31/rap的正确引入方式/" title="rap的正确引入方式">				
-						<img src="https://i0.hippopx.com/photos/965/714/472/tree-sunlight-background-relaxation-thumb.jpg" class="relateImg" alt="rap的正确引入方式">
-					</a>
-				</li>											
-		
 		
 				<li>
 					<div>
@@ -358,6 +373,24 @@ IOS9 Promise的finally...
 
 					<a href="/2019/01/31/前端踩坑记录/" title="前端踩坑记录">				
 						<img src="https://i0.hippopx.com/photos/179/171/625/sparkler-holding-hands-firework-thumb.jpg" class="relateImg" alt="前端踩坑记录">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/30/deno-install/" title="deno安装报错?">
+							deno安装报错?
+						</a>
+						<p>
+							deno 是新出的框架,本来想安装学习一下的,但是发现按照官方文档上的安装方法根本安装不了,应该是地址被墙了,折腾各种工具也没安装成功
+官方的shell安装命令
+curl -L https://deno.land/x/install/...
+						</p>
+					</div>
+
+					<a href="/2019/01/30/deno-install/" title="deno安装报错?">				
+						<img src="https://i0.hippopx.com/photos/871/443/724/stones-rocks-pebbles-tranquil-preview.jpg" class="relateImg" alt="deno安装报错?">
 					</a>
 				</li>											
 		
