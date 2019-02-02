@@ -714,11 +714,11 @@ main {
 	background: #fff;
 	z-index: 2;
 	object-fit: cover;
+	object-position: center;
 }
 
 .layout-cart .post img {
 	width: 100%;
-	height: 100%;
 }
 
 .layout-cart .post-text {
