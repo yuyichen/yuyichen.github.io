@@ -1,603 +1,130 @@
-<!--
-	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
--->
 
-	<!DOCTYPE html>
-	<html class="scrollbar">
-		
-
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
 <head><meta name="generator" content="Hexo 3.8.0">
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="x-dns-prefetch-control" content="on">
-  <title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>归档: 2019/1</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
     
-      文章归档: 2019/1 | 羽衣尘的个人博客
-    
-  </title>
-  <meta name="author" content="Lili">
-  <meta name="keywords" content="前端,技术博客,移动开发,node,deno,树莓派">
-  <meta name="description" content="">
-  <meta name="google-site-verification" content="2Y6J8QEOzfYhoFC-us18yBe6PuKnGviDFKAouQOKMno">
-	<!-- favicon -->
-  <link rel="shortcut icon" href="https://avatars1.githubusercontent.com/u/8286053?s=460&v=4">
-
-  <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-    <!-- jquery -->
-	<script src="/js/jquery-2.1.1.min.js"></script>
-
-  <!-- leancloud -->
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+    <meta name="author" content="Lili"> 
+    <link rel="alternative" href="atom.xml" title="羽衣尘的个人博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	<body>
-		<!-- Preloader -->
-
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
-				</div>
-						
-		</div>
-	</div>
-
-
-<!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
-	<div class="header-banner"></div>
-	<div class="mask">
-		<div class="h-header">
-			<div id="logo-S">
-				
-					<a href="/">
-						Welcome
-					</a>
-				
-			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
-				<ul>
-					
-						<li class="menu-home">
-							<a href="/" class="menu-item-home">主页</a>
-						</li>
-					
-						<li class="menu-archive">
-							<a href="/archives" class="menu-item-archive">归档</a>
-						</li>
-					
-						<li class="menu-categories">
-							<a href="/categories" class="menu-item-categories">分类</a>
-						</li>
-					
-						<li class="menu-tags">
-							<a href="/tags" class="menu-item-tags">标签</a>
-						</li>
-					
-						<li class="menu-about">
-							<a href="/about" class="menu-item-about">关于</a>
-						</li>
-					
-						<li class="menu-gallery">
-							<a href="/gallery" class="menu-item-gallery">相册</a>
-						</li>
-					
-
-					
-				</ul>			
-			</div>				
-		</div>
-
-		<div class="h-body">	
-			<!-- motto -->
-			
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
-			
-
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					
-						文章归档
-					
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
-
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<ul>
-				<!-- <li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li> -->
-				<li class="animate-up-down" id="read-more">
-					<a href="javascript:;"><i class="fa fa-angle-double-down"></i></a>
-				</li>
-				<!-- <li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li> -->
-			</ul>
-		</div>
-		
-</div></header>
-
-<!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
-
-<nav class="nav-container" id="cd-nav">
-	<div class="nav-header">
-		<h3>Navigation</h3>
-		<a href="javascript:;" class="nav-close"></a>
-	</div>
-	<div class="nav-body">
-		<ul>
-			
-				<li class="menu-home">
-					<a href="/" class="menu-item-home">主页</a>
-				</li>
-			
-				<li class="menu-archive">
-					<a href="/archives" class="menu-item-archive">归档</a>
-				</li>
-			
-				<li class="menu-categories">
-					<a href="/categories" class="menu-item-categories">分类</a>
-				</li>
-			
-				<li class="menu-tags">
-					<a href="/tags" class="menu-item-tags">标签</a>
-				</li>
-			
-				<li class="menu-about">
-					<a href="/about" class="menu-item-about">关于</a>
-				</li>
-			
-				<li class="menu-gallery">
-					<a href="/gallery" class="menu-item-gallery">相册</a>
-				</li>
-			
-
-			
-		</ul>
-	</div>
-
-	<div class="nav-footer">
-		<ul>
-	
-		
-			<li>
-				<a href="https://github.com/yuyichen" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="https://weibo.com/u/2617682101/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:mr-lili@163.com" title="Email">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-		
-			<li>
-				<a href="https://twitter.com/lili_tjpu" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
-</nav>
-
-		
-		<!--main-->
-		<main>
-			<!--
-	时间：2018-11-08
-	描述：The archive module refers to 'https://1984n.win/archives-post/' & 'http://1900.live/one-theme/', include js、css. Relevant rights reserved by them! 
--->
-<div class="layout-archive">
-    <div class="i-container">
-        <i class="fa fa-book">
-			
-				总计 6 篇 文章
-			
-		</i>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">羽衣尘的个人博客</span>
+    <div id="loader"></div>
+    <div id="single" class="page">
+    <div id="top">
+        <a class="icon-left image-icon" href="javascript:history.back()"></a>
     </div>
-
-    <!-- Archive by year, display in page( archive ) -->
-    <div id="layout-archive-year" style="display: 
-                 	
-            block">        
-        
-        
-        <ul>
-            
-                <li>
-                    <a href="/2019/02/13/上网新姿势/">
-            			<em year="2019">
-                            02-13
-                        </em>
-        			    <span itemprop="name">
-                            上网新姿势
-                        </span>
-        			    
-                			<a href="/tags/科学上网/" class="tag">
-                				科学上网
-                			</a>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                    <div class="timeline">
+                      <h2 class="timeline-title">归档: 8篇</h2>
+                      
                         
-                			<a href="/tags/PAC/" class="tag">
-                				PAC
-                			</a>
+                          <h3 class="timeline-subtitle">2019</h3>
                         
-                			<a href="/tags/SwitchyOmega/" class="tag">
-                				SwitchyOmega
-                			</a>
+                        <div class="timeline-item">
+                          <time>2019-01-31</time>
+                          <a target="_self" href="/2019/01/31/rap的正确引入方式/">rap的正确引入方式</a>
+                        </div>
+                      
                         
-                			<a href="/tags/chrome/" class="tag">
-                				chrome
-                			</a>
+                        <div class="timeline-item">
+                          <time>2019-01-31</time>
+                          <a target="_self" href="/2019/01/31/前端踩坑记录/">前端踩坑记录</a>
+                        </div>
+                      
                         
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/2019/02/02/Node连接印象笔记实现一个微信自动回复机器人/">
-            			<em year="2019">
-                            02-02
-                        </em>
-        			    <span itemprop="name">
-                            Node连接印象笔记实现一个微信自动回复机器人
-                        </span>
-        			    
-                			<a href="/tags/nodeJs/" class="tag">
-                				nodeJs
-                			</a>
+                        <div class="timeline-item">
+                          <time>2019-01-30</time>
+                          <a target="_self" href="/2019/01/30/deno-install/">deno安装报错?</a>
+                        </div>
+                      
                         
-                			<a href="/tags/印象笔记/" class="tag">
-                				印象笔记
-                			</a>
-                        
-                			<a href="/tags/微信机器人/" class="tag">
-                				微信机器人
-                			</a>
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/2019/01/31/rap的正确引入方式/">
-            			<em year="2019">
-                            01-31
-                        </em>
-        			    <span itemprop="name">
-                            rap的正确引入方式
-                        </span>
-        			    
-                			<a href="/tags/rap/" class="tag">
-                				rap
-                			</a>
-                        
-                			<a href="/tags/mock/" class="tag">
-                				mock
-                			</a>
-                        
-                			<a href="/tags/webpack/" class="tag">
-                				webpack
-                			</a>
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/2019/01/31/前端踩坑记录/">
-            			<em year="2019">
-                            01-31
-                        </em>
-        			    <span itemprop="name">
-                            前端踩坑记录
-                        </span>
-        			    
-                			<a href="/tags/ios/" class="tag">
-                				ios
-                			</a>
-                        
-                			<a href="/tags/安卓/" class="tag">
-                				安卓
-                			</a>
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/2019/01/30/deno-install/">
-            			<em year="2019">
-                            01-30
-                        </em>
-        			    <span itemprop="name">
-                            deno安装报错?
-                        </span>
-        			    
-                			<a href="/tags/deno/" class="tag">
-                				deno
-                			</a>
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/2019/01/30/hello-world/">
-            			<em year="2019">
-                            01-30
-                        </em>
-        			    <span itemprop="name">
-                            Hello World
-                        </span>
-        			    
-                    </a>
-                </li>
-            
-        </ul>
+                        <div class="timeline-item">
+                          <time>2019-01-30</time>
+                          <a target="_self" href="/2019/01/30/hello-world/">Hello World</a>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-     <!-- Archive by month, called by page( categories, tags... ) -->
-    <div id="layout-archive-month" style="display: 
-         
-            none"> 
-        
-
-        
-        
-            
-
-            
-                
-                <h3 class="archive-year">
-                    <!-- <a href="/archives/2019/01"> -->
-                    <a>
-                        2019 - 01
-                    </a>
-                </h3>
-            
-
-            <ul>
-                <li>
-                    <a href="/2019/01/31/rap的正确引入方式/">
-                        <em>
-                            01-31
-                        </em>
-                        <span itemprop="name">
-                            rap的正确引入方式
-                        </span>
-                        
-                            <a href="/tags/rap/" class="tag">
-                                rap
-                            </a>
-                        
-                            <a href="/tags/mock/" class="tag">
-                                mock
-                            </a>
-                        
-                            <a href="/tags/webpack/" class="tag">
-                                webpack
-                            </a>
-                               
-                    </a>
-                </li>
-            </ul>
-        
-            
-
-            
-
-            <ul>
-                <li>
-                    <a href="/2019/01/31/前端踩坑记录/">
-                        <em>
-                            01-31
-                        </em>
-                        <span itemprop="name">
-                            前端踩坑记录
-                        </span>
-                        
-                            <a href="/tags/ios/" class="tag">
-                                ios
-                            </a>
-                        
-                            <a href="/tags/安卓/" class="tag">
-                                安卓
-                            </a>
-                               
-                    </a>
-                </li>
-            </ul>
-        
-            
-
-            
-
-            <ul>
-                <li>
-                    <a href="/2019/01/30/deno-install/">
-                        <em>
-                            01-30
-                        </em>
-                        <span itemprop="name">
-                            deno安装报错?
-                        </span>
-                        
-                            <a href="/tags/deno/" class="tag">
-                                deno
-                            </a>
-                               
-                    </a>
-                </li>
-            </ul>
-        
-            
-
-            
-
-            <ul>
-                <li>
-                    <a href="/2019/01/30/hello-world/">
-                        <em>
-                            01-30
-                        </em>
-                        <span itemprop="name">
-                            Hello World
-                        </span>
-                               
-                    </a>
-                </li>
-            </ul>
-        
-    </div>
-
-    
 </div>
-		</main>
-		
-		<!--footer-->
-		<footer>
-	<div class="social">
-		<ul>
-	
-		
-			<li>
-				<a href="https://github.com/yuyichen" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="https://weibo.com/u/2617682101/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:mr-lili@163.com" title="Email">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
 
-		
-		
-			<li>
-				<a href="https://twitter.com/lili_tjpu" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
-		
-	<div class="copyright">
-		<p>
-			 
-				&copy;2017 - 2019, content by Lili. 原创文章，版权所有，谢绝转载.
-			
-			
-		</p>
-		<p>
-			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
-		</p>
-		
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
 
-	<!-- busuanzi -->
-	<!-- busuanzi -->
-
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_site_pv">
-	    	本站总访问量<span id="busuanzi_value_site_pv"></span>次
-		</span>
-
-		<span id="busuanzi_container_site_uv">
-	  		本站访客数<span id="busuanzi_value_site_uv"></span>人次
-		</span>
-		
-	
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
 
-	</div>		
-</footer>
-		
-    <!-- set '1' to show motto in all pages! -->
-
-	<script src="/js/motto.js"></script>
-	<script type="text/javascript">
-		$(".motto").html( getMingYanContent() );
-	</script>	
-
-
-
-
-
-
-    <script src="/js/love.js"></script>
-
-
-<!--back to top-->
-
-    
-	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
-	</div>
-	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
-	</div>
- 
-
-
- 
-
-<script src="/js/vibrant.js"></script>
-<script src="/js/chinese.js"></script>
-<script src="/js/main.js"></script>
-	</body>
-	</html>
+</html>
