@@ -34,7 +34,11 @@ jobs:
         run: |
           npm i
           npm run build
-          
+
+      - name: copy cname file
+        run: |
+          cp CNAME ./docs/CNAME
+
       - name: commit build
         run: |
           git config --global user.name 'Github Actions'
@@ -42,4 +46,7 @@ jobs:
           git add .
           git commit -m 'auto build'
           git push
+
+
+
           
