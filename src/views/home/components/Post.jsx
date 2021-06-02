@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default (props) => {
   const { layout = 3, postData = {} } = props;
+  console.log(postData)
   const coverUrl = "https://source.unsplash.com/800x600/?nature";
   if (layout === 1) {
     return (
@@ -24,7 +25,7 @@ export default (props) => {
                 GETTING STARTED
               </p>
               <div className="w-full font-bold text-xl text-gray-900 px-6">
-                👋 Welcome fellow Tailwind CSS and Ghost fan
+                {postData.filename}
               </div>
               <p className="text-gray-800 font-serif text-base px-6 mb-5">
                 This starter template is an attempt to replicate the default
