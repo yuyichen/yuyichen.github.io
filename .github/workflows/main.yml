@@ -36,7 +36,6 @@ jobs:
           npm run build
           
       - name: commit build
-        uses: actions/checkout@v2
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email 'lili@shulie.io'
