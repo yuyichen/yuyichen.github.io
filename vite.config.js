@@ -37,7 +37,7 @@ export default defineConfig({
     // }),
   ],
   server: {
-    port: 8000,
+    // port: 8000,
     // cors: true, // 默认启用并允许任何源
     // 反向代理配置
     proxy: {

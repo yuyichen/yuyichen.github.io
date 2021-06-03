@@ -39,8 +39,8 @@ export default () => {
             {postList.length > 0 && <Post layout={1} postData={postList[0]} />}
             {postList.length > 1 && (
               <div className="flex flex-wrap justify-between pt-12 -mx-6">
-                {postList.slice(1).map(([x, y]) => (
-                  <Post key={x} layout={3} postData={y} />
+                {postList.slice(1).map((x) => (
+                  <Post key={x.filename} layout={3} postData={x} />
                 ))}
               </div>
             )}

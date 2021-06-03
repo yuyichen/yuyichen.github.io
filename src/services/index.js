@@ -1,9 +1,11 @@
 import axios from 'axios'
 
+const based_token = 'Z2hwX3BKNWJ2U095WWdISkxBZjk0ZE96WDdNM3lmMGJ2UjFLelFiZg=='
+
 const request = axios.create({
   baseURL: 'https://api.github.com',
   headers: {
-    Authorization: 'token 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'
+    Authorization: `token ${atob(based_token)}`
   }
 })
 

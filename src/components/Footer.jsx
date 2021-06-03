@@ -24,6 +24,15 @@ export default (props) => {
                   HOME
                 </NavLink>
               </li>
+              <li>
+                <a
+                  href="https://github.com/yuyichen"
+                  target="_blank"
+                  className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3"
+                >
+                  GitHub
+                </a>
+              </li>
               {/* <li>
                 <NavLink
                   to="/"

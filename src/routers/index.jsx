@@ -1,21 +1,16 @@
-import React, { Suspense, lazy } from 'react';
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
-import routerConfig from './config';
+import React, { Suspense, lazy } from "react";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import routerConfig from "./config";
+import Loading from "@/components/Loading";
 
 export default () => {
   return (
     <HashRouter>
-      <Suspense
-        fallback={
-          <div className="h-full w-full flex items-center justify-center">
-            <span>loading...</span>
-          </div>
-        }
-      >
+      <Suspense fallback={<Loading />}>
         <Switch>
           {routerConfig.map((x) => {
-            const Comp = lazy(
-              () => import(`../views/${x.component}/index.jsx`)
+            const Comp = lazy(() =>
+              import(`../views/${x.component}/index.jsx`)
             );
             return (
               <Route
@@ -28,7 +23,7 @@ export default () => {
               />
             );
           })}
-          <Redirect path="/" to="/"/>
+          <Redirect path="/" to="/" />
         </Switch>
       </Suspense>
     </HashRouter>

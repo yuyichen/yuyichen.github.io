@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 export default (props) => {
   const { layout = 3, postData = {} } = props;
-  const coverUrl = "https://source.unsplash.com/800x600/?nature";
   if (layout === 1) {
     return (
-      <div className="flex h-full bg-white rounded overflow-hidden shadow-lg">
+      <div className="flex w-full h-full bg-white rounded overflow-hidden shadow-lg">
         <Link
           to={{
             pathname: `/post/${postData.filename}`,
@@ -14,27 +13,24 @@ export default (props) => {
               postData,
             },
           }}
-          className="flex flex-wrap no-underline hover:no-underline"
+          className="w-full flex flex-wrap no-underline hover:no-underline"
         >
-          <div className="w-full md:w-2/3 rounded-t">
-            <img
-              src="https://source.unsplash.com/800x600/weekly/?nature"
-              className="h-full w-full shadow"
-            />
-          </div>
+          <div
+            className="w-full md:w-2/3 rounded-t bg-gray-100 h-0 overflow-visible bg-center bg-cover"
+            style={{
+              paddingBottom: "50%",
+              backgroundImage: `url(https://source.unsplash.com/800x600/weekly/?nature)`,
+            }}
+          />
 
           <div className="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-              <p className="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">
-                GETTING STARTED
-              </p>
-              <div className="w-full font-bold text-xl text-gray-900 px-6">
+            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden">
+              <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6">
                 {postData.filename}
               </div>
-              <p className="text-gray-800 font-serif text-base px-6 mb-5">
-                This starter template is an attempt to replicate the default
-                Ghost theme "Casper" using Tailwind CSS and vanilla Javascript.
-              </p>
+              <div className="text-gray-500 font-serif text-base px-6 mb-5">
+                {postData.content}
+              </div>
             </div>
 
             {/* <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
@@ -56,7 +52,7 @@ export default (props) => {
 
   return (
     <div
-      className={`w-full md:w-1/${layout} p-6 flex flex-col flex-grow flex-shrink`}
+      className={`w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink`}
     >
       <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
         <Link
@@ -66,18 +62,20 @@ export default (props) => {
               postData,
             },
           }}
-          className="flex flex-wrap no-underline hover:no-underline"
+          className="w-full flex flex-wrap no-underline hover:no-underline"
         >
-          <img src={coverUrl} className="h-64 w-full rounded-t pb-6" />
-          <p className="w-full text-gray-600 text-xs md:text-sm px-6">
-            GETTING STARTED
-          </p>
-          <div className="w-full font-bold text-xl text-gray-900 px-6">
+          <div
+            className="w-full h-0 bg-center bg-cover overflow-visible"
+            style={{
+              paddingBottom: "50%",
+              backgroundImage: `url(https://source.unsplash.com/random/800x600/?nature&v=${postData.filename.length})`,
+            }}
+          />
+          <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6">
             {postData.filename}
           </div>
-          <p className="text-gray-800 font-serif text-base px-6 mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
-            ipsum eu nunc commodo posuere et sit amet ligula.
+          <p className="text-gray-500 font-serif text-base px-6 mb-5">
+            {postData.content}
           </p>
         </Link>
       </div>
