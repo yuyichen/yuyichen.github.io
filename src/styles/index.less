@@ -1,6 +1,24 @@
-@import './sspai.less';
-@import 'animate.css';
+@import "./sspai.less";
+@import "animate.css";
 
-html, body, #root{
+html,
+body,
+#root {
   height: 100%;
+}
+
+.linear-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  // background: #fff;
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #fff 60%,
+    #fff 100%
+  );
 }

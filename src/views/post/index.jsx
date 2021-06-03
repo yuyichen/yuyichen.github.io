@@ -93,8 +93,8 @@ export default (props) => {
         className="container w-full max-w-6xl mx-auto bg-gray-100 bg-cover bg-center mt-8 rounded"
         style={{
           backgroundImage:
-            "url('https://source.unsplash.com/collection/1118905/')",
-          height: "40vh",
+            "url('https://source.unsplash.com/random/1920x800/?nature')",
+          height: "60vh",
         }}
       ></div>
 

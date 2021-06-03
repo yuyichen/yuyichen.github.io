@@ -16,16 +16,19 @@ export default (props) => {
           className="w-full flex flex-wrap no-underline hover:no-underline"
         >
           <div
-            className="w-full md:w-2/3 rounded-t bg-gray-100 h-0 overflow-visible bg-center bg-cover"
+            className="w-full md:w-2/3 bg-gray-100 h-0 overflow-visible bg-center bg-cover"
             style={{
               paddingBottom: "50%",
               backgroundImage: `url(https://source.unsplash.com/800x600/weekly/?nature)`,
             }}
           />
 
-          <div className="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden">
-              <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6">
+          <div
+            className="w-full md:w-1/3 flex flex-col flex-grow flex-shrink h-0 relative"
+            style={{ paddingBottom: "50%" }}
+          >
+            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden absolute inset-0 linear-bg">
+              <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6 pb-3">
                 {postData.filename}
               </div>
               <div className="text-gray-500 font-serif text-base px-6 mb-5">
@@ -51,9 +54,7 @@ export default (props) => {
   }
 
   return (
-    <div
-      className={`w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink`}
-    >
+    <div className={`w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink`}>
       <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
         <Link
           to={{
@@ -71,12 +72,21 @@ export default (props) => {
               backgroundImage: `url(https://source.unsplash.com/random/800x600/?nature&v=${postData.filename.length})`,
             }}
           />
-          <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6">
-            {postData.filename}
+          <div
+            className="relative w-full h-0 relative linear-bg"
+            style={{
+              paddingBottom: "31%",
+            }}
+          >
+            <div className="absolute inset-0">
+              <div className="w-full font-bold text-xl text-gray-900 px-6 pt-6 pb-3">
+                {postData.filename}
+              </div>
+              <div className="text-gray-500 font-serif text-base px-6 mb-5">
+                {postData.content}
+              </div>
+            </div>
           </div>
-          <p className="text-gray-500 font-serif text-base px-6 mb-5">
-            {postData.content}
-          </p>
         </Link>
       </div>
       {/* <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
