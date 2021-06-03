@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 
 export default (props) => {
   const { layout = 3, postData = {} } = props;
-  console.log(postData)
   const coverUrl = "https://source.unsplash.com/800x600/?nature";
   if (layout === 1) {
     return (
       <div className="flex h-full bg-white rounded overflow-hidden shadow-lg">
         <Link
-          to={`/post/${postData.id}`}
+          to={{
+            pathname: `/post/${postData.filename}`,
+            state: {
+              postData,
+            },
+          }}
           className="flex flex-wrap no-underline hover:no-underline"
         >
           <div className="w-full md:w-2/3 rounded-t">
@@ -56,7 +60,12 @@ export default (props) => {
     >
       <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
         <Link
-          to={`/post/${postData.id}`}
+          to={{
+            pathname: `/post/${postData.filename}`,
+            state: {
+              postData,
+            },
+          }}
           className="flex flex-wrap no-underline hover:no-underline"
         >
           <img src={coverUrl} className="h-64 w-full rounded-t pb-6" />
@@ -64,7 +73,7 @@ export default (props) => {
             GETTING STARTED
           </p>
           <div className="w-full font-bold text-xl text-gray-900 px-6">
-            Lorem ipsum dolor sit amet.
+            {postData.filename}
           </div>
           <p className="text-gray-800 font-serif text-base px-6 mb-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at

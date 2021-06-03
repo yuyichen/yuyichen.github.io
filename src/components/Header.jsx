@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "@/assets/imgs/logo.png";
 
 export default (props) => {
   return (
@@ -8,8 +9,13 @@ export default (props) => {
         <div className="flex text-white font-extrabold">
           <NavLink
             to="/"
-            className="flex text-white text-base no-underline hover:text-white hover:no-underline"
+            className="flex text-white text-base no-underline hover:text-white hover:no-underline items-center"
           >
+            <img
+              src={logo}
+              alt="logo"
+              style={{ width: 64, filter: 'invert(1)' }}
+            />
             <span className="hidden w-0 md:w-auto md:block pl-1">
               羽衣尘的博客
             </span>
