@@ -46,10 +46,3 @@ jobs:
           git add .
           git commit -m 'auto build'
           git push
-
-      - name: send telegram message
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.telegram_bot_chat_id }}
-          token: ${{ secrets.telegram_bot_chat_token }}
-          message: ${{ github.repository }}构建状态为：${{ job.status }} 
