@@ -5,8 +5,13 @@ export default [
     component: 'home',
   },
   {
-    title: '首页',
+    title: '文章页',
     path: '/post/:title',
     component: 'post',
+  },
+  {
+    title: '文章编辑页',
+    path: '/editPost/:title',
+    component: 'post/edit',
   },
 ];

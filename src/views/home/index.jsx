@@ -48,11 +48,7 @@ export default () => {
         </div>
       </div>
       <Footer />
-      <Loading
-        className={`animate__animated ${
-          loading ? "" : "hidden animate__fadeOut"
-        }`}
-      />
+      <Loading loading={loading} />
     </div>
   );
 };

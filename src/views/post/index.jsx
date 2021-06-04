@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Markdown from "markdown-to-jsx";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import services from "@/services";
 import Loading from "@/components/Loading";
 import logo from "@/assets/imgs/logo.png";
@@ -73,10 +73,14 @@ export default (props) => {
                 </span>
               </a>
             </div>
-            <div className="flex w-1/2 justify-end content-center">
-              <p className="hidden sm:block mr-3 text-center h-14 p-4 text-xs">
-                {/* <span className="pr-2">Share this</span> 👉 */}
-              </p>
+            <div className="flex w-1/2 justify-end content-center pr-6">
+              <div className="hidden sm:block mr-3 text-center p-4 text-xs">
+                <Link
+                  to={{ pathname: `/editPost/${title}`, state: { postData } }}
+                >
+                  编辑
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -110,11 +114,7 @@ export default (props) => {
           </div>
         </div>
       </div>
-      <Loading
-        className={`animate__animated ${
-          loading ? "" : "hidden animate__fadeOut"
-        }`}
-      />
+      <Loading loading={loading} />
 
       <Footer />
     </div>
