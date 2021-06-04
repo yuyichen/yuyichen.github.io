@@ -47,6 +47,14 @@ jobs:
           git commit -m 'auto build'
           git push
 
+      - name: telegram 通知
+        uses: yanzay/notify-telegram@v0.1.0
+        if: always()
+        with:
+          chat: ${{ secrets.telegram_bot_chat_id }} # user id or channel name secret
+          token: ${{ secrets.telegram_bot_chat_token }} # token secret
+          status: ${{ job.status }} # do not modify this line
+
 
 
           
