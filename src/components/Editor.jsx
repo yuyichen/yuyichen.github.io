@@ -8,5 +8,5 @@ export default (props) => {
     const result = await services.upload(file);
     return result.url; 
   }
-  return <Editor {...props} height="100%"/>
+  return <Editor {...props}/>
 };
