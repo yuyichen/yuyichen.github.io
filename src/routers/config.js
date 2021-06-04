@@ -2,12 +2,12 @@ export default [
   {
     title: '首页',
     path: '/',
-    component: 'home/index',
+    component: 'home',
   },
   {
     title: '文章页',
     path: '/post/:title',
-    component: 'post/index',
+    component: 'post',
   },
   {
     title: '文章编辑页',

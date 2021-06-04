@@ -9,7 +9,7 @@ export default () => {
       <Suspense fallback={<Loading />}>
         <Switch>
           {routerConfig.map((x) => {
-            const Comp = lazy(() => import(`../views/${x.component}.jsx`));
+            const Comp = lazy(() => import(`../views/${x.component}/index.jsx`));
             return (
               <Route
                 key={x.path}
