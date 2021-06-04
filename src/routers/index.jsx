@@ -21,6 +21,10 @@ export default () => {
               />
             );
           })}
+          <Route
+            path='*'
+            component={lazy(() => import(`../views/404.jsx`))}
+          />
           <Redirect path="/" to="/" />
         </Switch>
       </Suspense>

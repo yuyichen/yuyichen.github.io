@@ -77,7 +77,7 @@ export default (props) => {
             <div className="flex w-1/2 justify-end content-center pr-6">
               <div className="hidden sm:block mr-3 text-center p-4 text-xs">
                 {/* <Link
-                  to={{ pathname: `/editPost/${title}`, state: { postData } }}
+                  to={{ pathname: `/postEdit/${title}`, state: { postData } }}
                 >
                   编辑
                 </Link> */}
