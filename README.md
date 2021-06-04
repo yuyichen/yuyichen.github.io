@@ -10,3 +10,6 @@ CNAME里存放自定义域名信息，通过actions打包需要在build完成后
 这里使用了github api
 
 token生成入口 GitHub setting -> developer setting -> Personal access tokens
+
+## 坑
+* vite 中使用lazy 动态import组件，需要`index.jsx`结尾，而且不支持`${'post/edit'}/index.jsx`, 不然本地运行可以，部署就会报错 [issue](https://github.com/vitejs/vite/issues/2130)

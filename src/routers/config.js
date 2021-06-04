@@ -12,6 +12,6 @@ export default [
   {
     title: '文章编辑页',
     path: '/editPost/:title',
-    component: 'post/edit',
+    component: 'editPost',
   },
 ];
