@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import Markdown from "markdown-to-jsx";
+import Markdown from "markdown-to-jsx";
 import { Link, useLocation, useParams } from "react-router-dom";
 import services from "@/services";
 import Loading from "@/components/Loading";
 import logo from "@/assets/imgs/logo.png";
-import Editor from "@/components/Editor";
+// import Editor from "@/components/Editor";
 
 export default (props) => {
   const [scrollPercent, setScrollPercent] = useState("0%");
@@ -111,7 +111,8 @@ export default (props) => {
               minHeight: "calc(60vh - 80px)",
             }}
           >
-            <Editor
+            <Markdown>{postData?.content || ""}</Markdown>
+            {/* <Editor
               height="auto"
               visiableDragbar={false}
               className="markdown-preview"
@@ -119,7 +120,7 @@ export default (props) => {
               readOnly
               preview="preview"
               value={postData?.content}
-            />
+            /> */}
           </div>
         </div>
       </div>
