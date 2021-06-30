@@ -1,7 +1,22 @@
 import React from "react";
-import coverImg from '@/assets/imgs/cover.jpg'
+import coverImg from "@/assets/imgs/cover.jpg";
+import dayjs from "dayjs";
 
-export default () => {
+import duration from "dayjs/plugin/duration";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/zh-cn";
+
+dayjs.extend(duration);
+dayjs.extend(relativeTime);
+dayjs.locale("zh-cn");
+
+export default (props) => {
+  const { listData } = props;
+
+  const differTime = dayjs
+    .duration(dayjs(listData.updated_at).diff(dayjs()))
+    .humanize(true);
+
   return (
     <div
       className="w-full m-0 p-0 bg-cover bg-bottom"
@@ -15,7 +30,15 @@ export default () => {
         <p className="text-white font-extrabold text-3xl md:text-5xl mb-4">
           羽衣尘
         </p>
-        <p className="text-xl md:text-2xl text-gray-500">欢迎来到我的博客</p>
+        <span
+          className="px-6 py-4 inline-block rounded"
+          style={{ backgroundColor: "rgba(238, 238, 238, .4)" }}
+        >
+          <p className="text-xl md:text-2xl text-gray-200">欢迎来到我的博客</p>
+          {listData?.updated_at && (
+            <div className="text-gray-300 mt-2">更新于{differTime}</div>
+          )}
+        </span>
       </div>
     </div>
   );
