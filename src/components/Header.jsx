@@ -14,7 +14,7 @@ export default (props) => {
             <img
               src={logo}
               alt="logo"
-              style={{ width: 64, filter: 'invert(1)' }}
+              style={{ width: 64, filter: "invert(1)" }}
             />
             <span className="hidden w-0 md:w-auto md:block pl-1">
               羽衣尘的博客

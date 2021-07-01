@@ -8,10 +8,8 @@ export default () => (
     <Header />
     <div className="flex items-center justify-center" style={{ flex: 1 }}>
       <span className="text-center">
-        <img src={img} alt="404" className="shadow-lg"/>
-        <div className="text-gray-500 text-xl mt-6">
-          你访问的页面不存在
-        </div>
+        <img src={img} alt="404" className="shadow-lg" />
+        <div className="text-gray-500 text-xl mt-6">你访问的页面不存在</div>
       </span>
     </div>
     <Footer />

@@ -1,17 +1,17 @@
-import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
-import WindiCSS from 'vite-plugin-windicss';
-import path from 'path';
+import { defineConfig } from "vite";
+import reactRefresh from "@vitejs/plugin-react-refresh";
+import WindiCSS from "vite-plugin-windicss";
+import path from "path";
 // import vitePluginImport from 'vite-plugin-style-import';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'docs'
+    outDir: "docs",
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
     },
   },
   css: {

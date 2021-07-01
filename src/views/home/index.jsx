@@ -26,7 +26,7 @@ export default () => {
 
   return (
     <div className="bg-gray-200 font-sans leading-normal tracking-normal">
-      <Header listData={listData}/>
+      <Header listData={listData} />
       <div
         className="container px-4 md:px-0 max-w-6xl mx-auto -mt-32"
         style={{

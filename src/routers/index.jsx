@@ -9,7 +9,9 @@ export default () => {
       <Suspense fallback={<Loading />}>
         <Switch>
           {routerConfig.map((x) => {
-            const Comp = lazy(() => import(`../views/${x.component}/index.jsx`));
+            const Comp = lazy(() =>
+              import(`../views/${x.component}/index.jsx`)
+            );
             return (
               <Route
                 key={x.path}
@@ -21,10 +23,7 @@ export default () => {
               />
             );
           })}
-          <Route
-            path='*'
-            component={lazy(() => import(`../views/404.jsx`))}
-          />
+          <Route path="*" component={lazy(() => import(`../views/404.jsx`))} />
           <Redirect path="/" to="/" />
         </Switch>
       </Suspense>
